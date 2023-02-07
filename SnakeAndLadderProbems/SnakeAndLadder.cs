@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,16 +48,18 @@ namespace SnakeAndLadderProbems
                     break;
             }
         }
-        // UC5 programs modified for exact win condition
+        // UC5 programs modified to UC6 Report the number of times the dice was played to win the game and also the position after every die role
         public static void WinCondition()
         {
             int position = 0;
+            int count = 0;
             Random random = new Random();
             Random random1 = new Random();
             while (position < 100)
             {
                 int dieRoll = random.Next(1, 7);
                 int option = random1.Next(1, 4);
+                count = count + 1;
                 switch (option)
                 {
                     case 1:
@@ -76,6 +79,8 @@ namespace SnakeAndLadderProbems
                         break;
                 }
             }
+
+            Console.WriteLine("The number of time dice rolled to get winning position " + count);
         }
     }
 }
