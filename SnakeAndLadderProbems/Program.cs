@@ -8,13 +8,17 @@ namespace SnakeAndLadderProbems
         {
             Console.WriteLine("Welcome to Snake and Ladder program");
             Console.WriteLine("Please enter option given below");
-            Console.WriteLine("1:Player Position");
+            Console.WriteLine("1:Player Position\n2:DieRolled");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
             {
                 case 1:
                     SnakeAndLadder.Position();
+                    break;
+
+                case 2:
+                    SnakeAndLadder.DieRolled();
                     break;
             }
         }
