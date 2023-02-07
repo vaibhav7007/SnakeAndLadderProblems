@@ -45,15 +45,15 @@ namespace SnakeAndLadderProbems
                     position = position - dieRoll;
                     Console.WriteLine("Player move behind by number of die rolled " + position);
                     break;
-                }
             }
-
+        }
+        // UC5 programs modified for exact win condition
         public static void WinCondition()
         {
             int position = 0;
             Random random = new Random();
             Random random1 = new Random();
-            while (position <= 100)
+            while (position < 100)
             {
                 int dieRoll = random.Next(1, 7);
                 int option = random1.Next(1, 4);
@@ -61,6 +61,8 @@ namespace SnakeAndLadderProbems
                 {
                     case 1:
                         position = position + dieRoll;
+                        if (position > 100)
+                            position = 100;
                         Console.WriteLine("Player move ahead by number of Die rolled " + position);
                         break;
                     case 2:
@@ -72,8 +74,11 @@ namespace SnakeAndLadderProbems
                     case 3:
                         Console.WriteLine("Player remain at same position " + position);
                         break;
-                  }
                 }
             }
         }
+    }
 }
+        
+      
+
